@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ВТОПиТ — Учёт успеваемости</title>
+    <meta name="description"
+        content="Система учёта и анализа успеваемости студентов техникума общественного питания и торговли" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ===================== LOGIN PAGE ===================== -->
+    <div id="page-login" class="screen active">
+        <div class="login-wrap">
+            <div class="login-card">
+                <div class="login-logo">
+                    <div class="logo-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <div class="login-brand">
+                        <div class="brand-name">ВТОПиТ</div>
+                        <div class="brand-sub">Техникум общественного питания и торговли</div>
+                    </div>
+                </div>
+
+                <h1 class="login-heading">Вход в систему</h1>
+
+                <div class="field">
+                    <label>Логин</label>
+                    <input type="text" id="login-email" placeholder="Напр. 222606277" />
+                </div>
+                <div class="field">
+                    <label>Пароль</label>
+                    <input type="password" id="login-password" placeholder="Пароль" />
+                </div>
+
+                <div id="login-error" class="alert-error hidden">Неверный логин или пароль</div>
+
+                <button class="btn btn-primary w-full" id="btn-login">Войти</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== MAIN APP ===================== -->
+    <div id="app" class="hidden">
+
+        <!-- Верхняя навигация -->
+        <header class="navbar">
+            <div class="navbar-inner">
+                <div class="navbar-logo">
+                    <i data-lucide="graduation-cap"></i>
+                    <span>ВТОПиТ</span>
+                </div>
+
+                <nav class="navbar-links" id="navbar-links"></nav>
+
+                <div class="navbar-user">
+                    <div class="navbar-semester">
+                        <i data-lucide="calendar"></i>
+                        <span>2025/2026</span>
+                    </div>
+                    <div class="nav-user-info">
+                        <div class="nav-avatar" id="nav-avatar"></div>
+                        <div class="nav-name" id="nav-name"></div>
+                    </div>
+                    <button class="btn btn-ghost btn-sm" id="theme-toggle" onclick="toggleTheme()"
+                        title="Переключить тему">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button class="btn btn-outline btn-sm" onclick="logout()">
+                        <i data-lucide="log-out"></i>
+                        <span>Выйти</span>
+                    </button>
+                </div>
+
+                <!-- Мобильное меню -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <!-- Мобильные ссылки -->
+            <div class="mobile-nav hidden" id="mobile-nav"></div>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content" id="main-content"></main>
+
+    </div>
+
+    <script src="js/data.js?v=3"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+    <script src="js/pages/grades.js?v=5"></script>
+    <script src="js/pages/attendance.js?v=3"></script>
+    <script src="js/pages/students.js"></script>
+    <script src="js/pages/teachers.js?v=1"></script>
+    <script src="js/pages/groups.js"></script>
+    <script src="js/pages/subjects.js"></script>
+    <script src="js/pages/profile.js"></script>
+    <script src="js/pages/reports.js"></script>
+    <script src="js/pages/workload.js?v=2"></script>
+    <script src="js/app.js?v=3"></script>
+</body>
+
+</html>
